@@ -1,5 +1,3 @@
-/*
-
 // Factory Funciton
 function createCircle(radius, location) {
   return {
@@ -75,5 +73,3 @@ for (let key in circle)
 
 const cloned1 = Object.assign({}, circle);
 const cloned2 = { ...circle }; 
-
-*/
