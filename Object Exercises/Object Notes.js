@@ -1,4 +1,4 @@
-// Factory Funciton
+// Factory Function
 function createCircle(radius, location) {
   return {
     radius, // equal to radius = radius
@@ -55,10 +55,7 @@ increase(x)
 // To see if something exists in an object you can say:
   if('color' in circle) console.log('yes');
 
-
-
 // Cloning an object
-
 const circle = {
   radius: 1,
   draw() {
