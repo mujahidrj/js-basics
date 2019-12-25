@@ -60,7 +60,7 @@ let num = [1, 2];
 let another = num;
 
 // Only works if there are no other references to the array
-numbers = [];
+num = [];
 
 // Second solution
 numbers.length = 0;
@@ -72,8 +72,47 @@ numbers.splice(0, numbers.length);
 const firstArray = [1, 2, 3];
 const secondArray = [4, 5, 6];
 
-const combined = first.concat(secondArray);
+const combined = firstArray.concat(secondArray);
 const slided = combined.slice(2, 4);
+/* Primitive types in arrays are copied by value, Reference Types by Reference */
 
 // Spread Operator in ES6
 const combinedAlternate = [...firstArray, "a", ...secondArray, "b"];
+const copy = [...combined];
+
+// Iterating through array
+const numberArray = [1, 2, 3, 4, 5, 6, 7];
+numberArray.forEach((number, index) => console.log(index, number));
+
+// Joining Arrays
+const newNumArray = [1, 2, 3];
+const joined = newNumArray.join(", ");
+console.log(joined);
+// .join goes hand in hand with .split for strings
+
+// Sorting Arrays
+const unsorted = [2, 3, 1];
+unsorted.sort();
+unsorted.reverse();
+
+const unsortedCourses = [
+  { id: 1, name: "Node.js" },
+  { id: 2, name: "JS" }
+];
+
+unsortedCourses.sort(function(a, b) {
+  const nameA = a.name.toUpperCase();
+  const nameB = b.name.toUpperCase();
+
+  if (nameA < nameB) return -1;
+  if (nameA > nameB) return 1;
+  return 0;
+});
+
+console.log(unsortedCourses);
+
+// Testing Elements of an array
+numbers = [1, 2, 3];
+const allPositive = numbers.every(function(value) {
+  return value >= 0;
+});
