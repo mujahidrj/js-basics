@@ -112,7 +112,33 @@ unsortedCourses.sort(function(a, b) {
 console.log(unsortedCourses);
 
 // Testing Elements of an array
-numbers = [1, 2, 3];
+const numberArr = [1, 2, 3];
 const allPositive = numbers.every(function(value) {
   return value >= 0;
 });
+
+// Filtering an Array
+const manyNumbers = [1, -1, 2, 3];
+
+// Gets number where nmber >= 0
+const filtered = manyNumbers.filter(number => number >= 0);
+
+// Mapping an Array
+// Can map each element in an array to something else
+const items = filtered.map(number => "<li>" + number + "</li>");
+console.log(items);
+
+const html = "<ul>" + items.join("") + "</ul>";
+
+// Reducing an Array
+const elementsToBeSummed = [2, 25, 51];
+
+// let sum = 0;
+// for (let n of elementsToBeSummed)
+// sum += n;
+
+const sum = elementsToBeSummed.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
+
+console.log(sum);
