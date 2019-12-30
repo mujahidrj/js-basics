@@ -51,13 +51,20 @@ const person = {
   set fullName(value) {
     if (typeof value !== "string") throw new Error("Value is not  a string.");
     const parts = value.split(" ");
+    if (parts.length !== 2) throw new Error("Enter a first and last name");
     this.firstName = parts[0];
     this.lastName = parts[1];
   }
 };
 
 try {
-  person.fullName = "First Last";
+  person.fullName = "My name";
 } catch (e) {
   console.log(e);
+}
+
+// Let vs Var
+// Var is scoped in functions, but let is scoped in blocks
+function start() {
+  for (let i = 0; i < 5; i++) console.log(i);
 }
